@@ -4,11 +4,9 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.a360celsius.ned.application.App
+import com.a360celsius.ned.application.NedApplication
 import com.a360celsius.ned.datamodels.Symbol
 import com.a360celsius.ned.interfaces.ApiServiceInterface
-import com.a360celsius.ned.modules.ContextApplicationModule
-import com.a360celsius.ned.network.ApiService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,7 +25,7 @@ open class BaseActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        (application as App).getComponent().inject(this)
+        (application as NedApplication).getComponent().inject(this)
 
 
         apiService.create(ApiServiceInterface::class.java).getAllSymbols().enqueue(object: Callback<List<Symbol>> {

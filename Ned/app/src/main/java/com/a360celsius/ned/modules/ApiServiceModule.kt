@@ -1,4 +1,4 @@
-package com.a360celsius.ned.network
+package com.a360celsius.ned.modules
 
 import android.app.Application
 import dagger.Module
@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-class ApiService {
+class ApiServiceModule {
 
     lateinit var retrofit: Retrofit
     val BASE_URL: String = "https://api.iextrading.com/1.0/"

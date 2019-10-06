@@ -4,10 +4,10 @@ import android.app.Application
 import com.a360celsius.ned.interfaces.ApplicayionComponenet
 import com.a360celsius.ned.interfaces.DaggerApplicayionComponenet
 import com.a360celsius.ned.modules.ContextApplicationModule
-import com.a360celsius.ned.network.ApiService
+import com.a360celsius.ned.modules.ApiServiceModule
 
 
-class App: Application() {
+class NedApplication: Application() {
     private lateinit var component: ApplicayionComponenet
 
     override fun onCreate() {
@@ -16,7 +16,7 @@ class App: Application() {
         //needs to run once to generate it
         component = DaggerApplicayionComponenet.builder()
             .contextApplicationModule(ContextApplicationModule(this))
-            .apiService(ApiService())
+            .apiServiceModule(ApiServiceModule())
             .build()
 
     }
