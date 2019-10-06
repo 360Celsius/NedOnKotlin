@@ -14,7 +14,7 @@ class App: Application() {
 
         //needs to run once to generate it
         component = DaggerApplicayionComponenet.builder()
-            .applicationModule(ContextApplicationModule(this))
+            .contextApplicationModule(ContextApplicationModule(this))
             .build()
 
     }
