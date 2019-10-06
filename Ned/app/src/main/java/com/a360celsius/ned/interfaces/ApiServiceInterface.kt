@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface ApiServiceInterface {
 
-    @GET("/ref-data/symbols")
+    @GET("ref-data/symbols")
     fun getAllSymbols(): Call<List<Symbol>>
 
 }

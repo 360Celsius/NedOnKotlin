@@ -11,7 +11,7 @@ import javax.inject.Singleton
 class ApiService {
 
     lateinit var retrofit: Retrofit
-    val BASE_URL: String = "https://api.iextrading.com/1.0"
+    val BASE_URL: String = "https://api.iextrading.com/1.0/"
 
     @Provides
     @Singleton
